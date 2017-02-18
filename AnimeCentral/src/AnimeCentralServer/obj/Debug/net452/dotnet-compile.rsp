@@ -1,5 +1,5 @@
---temp-output:C:\Users\uchih\documents\visual studio 2015\Projects\AnimeCentral\src\AnimeCentralServer\obj\Debug\net452\
---out:C:\Users\uchih\documents\visual studio 2015\Projects\AnimeCentral\src\AnimeCentralServer\bin\Debug\net452\AnimeCentralServer.exe
+--temp-output:C:\Users\uchih\Desktop\PPDM\PDM-React-Native\AnimeCentral\src\AnimeCentralServer\obj\Debug\net452\
+--out:C:\Users\uchih\Desktop\PPDM\PDM-React-Native\AnimeCentral\src\AnimeCentralServer\bin\Debug\net452\AnimeCentralServer.exe
 --define:DEBUG
 --define:TRACE
 --define:NET452
@@ -155,12 +155,14 @@
 --reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.2\System.ComponentModel.DataAnnotations.dll
 --reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.2\System.Data.dll
 --reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.2\System.Transactions.dll
---resource:"C:\Users\uchih\documents\visual studio 2015\Projects\AnimeCentral\src\AnimeCentralServer\obj\Debug\net452\AnimeCentralServerdotnet-compile.deps.json",AnimeCentralServer.deps.json
-C:\Users\uchih\documents\visual studio 2015\Projects\AnimeCentral\src\AnimeCentralServer\Program.cs
-C:\Users\uchih\documents\visual studio 2015\Projects\AnimeCentral\src\AnimeCentralServer\Startup.cs
-C:\Users\uchih\documents\visual studio 2015\Projects\AnimeCentral\src\AnimeCentralServer\Context\AnimeDbContext.cs
-C:\Users\uchih\documents\visual studio 2015\Projects\AnimeCentral\src\AnimeCentralServer\Context\AnimeDbExtention.cs
-C:\Users\uchih\documents\visual studio 2015\Projects\AnimeCentral\src\AnimeCentralServer\Controllers\AnimeController.cs
-C:\Users\uchih\documents\visual studio 2015\Projects\AnimeCentral\src\AnimeCentralServer\Controllers\AuthController.cs
-C:\Users\uchih\documents\visual studio 2015\Projects\AnimeCentral\src\AnimeCentralServer\Domain\Anime.cs
-C:\Users\uchih\documents\visual studio 2015\Projects\AnimeCentral\src\AnimeCentralServer\Domain\User.cs
+--resource:"C:\Users\uchih\Desktop\PPDM\PDM-React-Native\AnimeCentral\src\AnimeCentralServer\obj\Debug\net452\AnimeCentralServerdotnet-compile.deps.json",AnimeCentralServer.deps.json
+C:\Users\uchih\Desktop\PPDM\PDM-React-Native\AnimeCentral\src\AnimeCentralServer\Program.cs
+C:\Users\uchih\Desktop\PPDM\PDM-React-Native\AnimeCentral\src\AnimeCentralServer\Startup.cs
+C:\Users\uchih\Desktop\PPDM\PDM-React-Native\AnimeCentral\src\AnimeCentralServer\Context\AnimeDbContext.cs
+C:\Users\uchih\Desktop\PPDM\PDM-React-Native\AnimeCentral\src\AnimeCentralServer\Context\AnimeDbExtention.cs
+C:\Users\uchih\Desktop\PPDM\PDM-React-Native\AnimeCentral\src\AnimeCentralServer\Controllers\AnimeController.cs
+C:\Users\uchih\Desktop\PPDM\PDM-React-Native\AnimeCentral\src\AnimeCentralServer\Controllers\AuthController.cs
+C:\Users\uchih\Desktop\PPDM\PDM-React-Native\AnimeCentral\src\AnimeCentralServer\Domain\Anime.cs
+C:\Users\uchih\Desktop\PPDM\PDM-React-Native\AnimeCentral\src\AnimeCentralServer\Domain\User.cs
+C:\Users\uchih\Desktop\PPDM\PDM-React-Native\AnimeCentral\src\AnimeCentralServer\Models\AnimeModel.cs
+C:\Users\uchih\Desktop\PPDM\PDM-React-Native\AnimeCentral\src\AnimeCentralServer\Utils\Utils.cs

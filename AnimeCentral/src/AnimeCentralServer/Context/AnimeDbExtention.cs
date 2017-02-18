@@ -2,13 +2,11 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Net;
 using System.Text;
-using System.Threading.Tasks;
 using System.Xml;
+using AnimeCentralServer.Utils;
 
 namespace AnimeCentralServer.Context
 {
@@ -16,6 +14,7 @@ namespace AnimeCentralServer.Context
     {
         public const string REQUEST_LIST_LINK = @"https://myanimelist.net/malappinfo.php?u=phoenixitachi&type=anime&status=all";
         public const string REQUEST_ANIME_LINK = @"https://myanimelist.net/api/anime/search.xml?q=";
+
         public static void Seed(IApplicationBuilder app)
         {
 
@@ -52,21 +51,16 @@ namespace AnimeCentralServer.Context
                     var anime = new Anime()
                     {
                         Title = xn["series_title"].InnerText,
-                        Image = xn["series_image"].InnerText,
                         NoEpisodes = int.Parse(xn["series_episodes"].InnerText),
                         Synonyms = xn["series_synonyms"].InnerText,
-                        DateStart = xn["series_start"].InnerText,
-                        DateEnd = xn["series_end"].InnerText,
                         Synopsis = animeNode["synopsis"].InnerText,
-                        Score = double.Parse(animeNode["score"].InnerText),
-                        Status = animeNode["status"].InnerText
-
+                        Status = animeNode["status"].InnerText,
+                        LastTimeModified = DateTime.Now
                     };
 
                     context.Anime.Add(anime);
                     context.SaveChanges();
                 }
-
 
                 context.Users.Add(new User()
                 {
@@ -80,5 +74,7 @@ namespace AnimeCentralServer.Context
             }
 
         }
+
+        
     }
 }

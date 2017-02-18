@@ -29,8 +29,8 @@ namespace AnimeCentralServer
 
             using (var db = new AnimeDbContext())
             {
-                db.Database.EnsureDeleted();
-                db.Database.EnsureCreated();
+                //db.Database.EnsureDeleted();
+                //db.Database.EnsureCreated();
             }
 
             builder.AddEnvironmentVariables();
@@ -55,7 +55,7 @@ namespace AnimeCentralServer
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
 
-            AnimeDbExtention.Seed(app);
+            //AnimeDbExtention.Seed(app);
 
             app.UseApplicationInsightsRequestTelemetry();
 
