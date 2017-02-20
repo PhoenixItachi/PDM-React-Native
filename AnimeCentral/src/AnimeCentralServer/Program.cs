@@ -15,7 +15,7 @@ namespace AnimeCentralServer
             var host = new WebHostBuilder()
                 .UseKestrel()
                 .UseContentRoot(Directory.GetCurrentDirectory())
-                .UseUrls("http://192.168.43.73:4646/")
+                .UseUrls("http://192.168.0.4:5000/")
                 .UseIISIntegration()
                 .UseStartup<Startup>()
                 .Build();

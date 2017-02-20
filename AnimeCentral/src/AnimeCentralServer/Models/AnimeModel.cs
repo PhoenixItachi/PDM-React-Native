@@ -15,7 +15,6 @@ namespace AnimeCentralServer.Models
         [Range(1, 2000)]
         public int NoEpisodes { get; set; }
 
-        [Required]
         public string Synonyms { get; set; }
 
         [Required]

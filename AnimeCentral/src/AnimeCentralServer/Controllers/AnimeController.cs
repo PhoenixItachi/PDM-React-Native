@@ -20,10 +20,19 @@ namespace AnimeCentralServer.Controllers
     public class AnimeController : Controller
     {
         public AnimeDbContext Context { get; set; }
+        public const string LAST_MODIFIED = "Last-Modified";
+
 
         public AnimeController(AnimeDbContext context)
         {
             Context = context;
+        }
+
+        [Route("Ping")]
+        [HttpGet]
+        public ActionResult Ping()
+        {
+            return Ok();
         }
 
         public JsonResult VerifyToken(HttpRequest request)
@@ -43,10 +52,35 @@ namespace AnimeCentralServer.Controllers
         {
             var authError = VerifyToken(Request);
             if (authError != null)
+            {
+                Response.StatusCode = 401;
                 return authError;
+            }
 
             var animeList = Context.Anime.ToList();
-            return Json(animeList);
+            Response.StatusCode = 200;
+            var lastModified = animeList.OrderByDescending(a => a.LastTimeModified).First().LastTimeModified;
+            return Json(new { success = true, items = animeList, lastModified = lastModified });
+        }
+
+        [HttpGet("{id}")]
+        public ActionResult Get(int id)
+        {
+            var authError = VerifyToken(Request);
+            if (authError != null)
+            {
+                Response.StatusCode = 401;
+                return authError;
+            }
+
+            var anime = Context.Anime.Where(a => a.ID == id).FirstOrDefault();
+            if (anime == null)
+                return NotFound();
+            else
+            {
+                Response.StatusCode = 200;
+                return Json(anime);
+            }
         }
 
         [HttpPost]
@@ -103,7 +137,7 @@ namespace AnimeCentralServer.Controllers
         }
 
         // DELETE api/values/5
-        [HttpDelete]
+        [HttpDelete("{id}")]
         public ActionResult Delete(int id)
         {
             var authError = VerifyToken(Request);
@@ -141,10 +175,11 @@ namespace AnimeCentralServer.Controllers
                 else
                     return Ok();
 
-            } catch (Exception e)
+            }
+            catch (Exception e)
             {
                 Response.StatusCode = 404;
-                return Json(new { maessage = e.Message});
+                return Json(new { maessage = e.Message });
             }
         }
     }
